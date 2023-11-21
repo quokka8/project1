@@ -1,0 +1,172 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+    ReaderMe - FAQ
+{% endblock %}
+
+{% block content %}
+{% include "main/navbar.html" %}
+<div class="container mt-5"> 
+    <h2 class="text-center mb-4" style="color: #333333; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+        FAQ
+    </h2>
+
+    <div class="faq-item">
+        <p class="question">
+            Q: What is ReaderMe?
+        </p>
+        <p class="answer">
+            A: ReaderMe is an online platform designed for passionate book lovers. It offers a space for users to connect with fellow readers, explore curated book collections, manage reading lists, participate in book discussions, and join group readings.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <p class="question">
+            Q: How can I add a book to my reading list?
+        </p>
+        <p class="answer">
+            A: To add a book to your reading list, simply navigate to the desired book in the collection and click on the "Add to Reading List" button. You can organize and manage your reading lists for each of the six collections available.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <p class="question">
+            Q: What are the discussion features in ReaderMe?
+        </p>
+        <p class="answer">
+            A: ReaderMe provides a chat feature for each book, allowing users to discuss their thoughts, set discussion goals, and schedule group reading discussions. Users can participate in real-time conversations and immerse themselves in an online reading club experience.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <p class="question">
+            Q: Can I schedule discussions for a specific time?
+        </p>
+        <p class="answer">
+            A: Yes, you can schedule discussions for a specific time in the chat feature. Coordinate with other readers, set discussion goals (e.g., "first 50 pages"), and schedule discussions to enhance the community reading experience.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <p class="question">
+            Q: How do I manage my group readings?
+        </p>
+        <p class="answer">
+            A: To manage your group readings, visit the "My Group Readings" section. Here, you can view the books you plan to read with a group, invite others to join your reading group, and even delete group readings when needed.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <p class="question">
+            Q: Is there a way to invite others to join my group reading?
+        </p>
+        <p class="answer">
+            A: Yes, you can invite others to join your group reading by using the "Add to Group Reading List" button on the book's page. Share the invitation link with fellow readers, and they can join your group reading discussions.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <p class="question">
+            Q: What collections are available on ReaderMe?
+        </p>
+        <p class="answer">
+            A: ReaderMe currently offers six collections to choose from:
+            <ul>
+                <li>World Classic</li>
+                <li>Kazakh Literature</li>
+                <li>Scientific Literature</li>
+                <li>Mystery & Thriller</li>
+                <li>Biographies & Memoirs</li>
+                <li>Self-Help & Personal Development</li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <p class="question">
+            Q: How can I customize my ReaderMe profile?
+        </p>
+        <p class="answer">
+            A: ReaderMe provides a user profile section where you can showcase your favorite books, reading habits, and contribute to book reviews. Customize your profile settings to make it uniquely yours.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <p class="question">
+            Q: Is ReaderMe available on mobile devices?
+        </p>
+        <p class="answer">
+            A: Yes, ReaderMe is designed to be responsive, providing a seamless experience across various devices, including desktops, tablets, and smartphones. Access your favorite books and discussions on the go.
+        </p>
+    </div>
+</div>
+
+<style>
+    .faq-item {
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #F3EEEA;
+        border-radius: 10px;
+    }
+
+    .question {
+        font-weight: bold;
+        color: #85586F;
+    }
+
+    .answer {
+        color: #000000;
+    }
+</style>
+
+{% endblock %}
+
+
+
+{% comment %} {% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+    ReaderMe - FAQ
+{% endblock %}
+
+{% block content %}
+{% include "main/navbar.html" %}
+<h2>FAQ</h2>
+<p>
+Q: What is ReaderMe?
+A: ReaderMe is an online platform designed for passionate book lovers. It offers a space for users to connect with fellow readers, explore curated book collections, manage reading lists, participate in book discussions, and join group readings.
+
+Q: How can I add a book to my reading list?
+A: To add a book to your reading list, simply navigate to the desired book in the collection and click on the "Add to Reading List" button. You can organize and manage your reading lists for each of the six collections available.
+
+Q: What are the discussion features in ReaderMe?
+A: ReaderMe provides a chat feature for each book, allowing users to discuss their thoughts, set discussion goals, and schedule group reading discussions. Users can participate in real-time conversations and immerse themselves in an online reading club experience.
+
+Q: Can I schedule discussions for a specific time?
+A: Yes, you can schedule discussions for a specific time in the chat feature. Coordinate with other readers, set discussion goals (e.g., "first 50 pages"), and schedule discussions to enhance the community reading experience.
+
+Q: How do I manage my group readings?
+A: To manage your group readings, visit the "My Group Readings" section. Here, you can view the books you plan to read with a group, invite others to join your reading group, and even delete group readings when needed.
+
+Q: Is there a way to invite others to join my group reading?
+A: Yes, you can invite others to join your group reading by using the "Add to Group Reading List" button on the book's page. Share the invitation link with fellow readers, and they can join your group reading discussions.
+
+Q: What collections are available on ReaderMe?
+A: ReaderMe currently offers six collections to choose from:
+
+World Classic
+Kazakh Literature
+Scientific Literature
+Mystery & Thriller
+Biographies & Memoirs
+Self-Help & Personal Development
+Q: How can I customize my ReaderMe profile?
+A: ReaderMe provides a user profile section where you can showcase your favorite books, reading habits, and contribute to book reviews. Customize your profile settings to make it uniquely yours.
+
+Q: Is ReaderMe available on mobile devices?
+A: Yes, ReaderMe is designed to be responsive, providing a seamless experience across various devices, including desktops, tablets, and smartphones. Access your favorite books and discussions on the go.
+</p>
+
+{% endblock %} {% endcomment %}

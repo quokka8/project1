@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+{% if user_signed_up %}
+    <div class="container mt-3">
+        <div class="alert alert-success" role="alert">
+            You have successfully signed up and logged in!
+        </div>
+    </div>
+    {% endif %}
+
+    {% include "main/navbar.html" %}
+    
+  <!-- Display Latest News -->
+    <div class="container mt-3 news">
+        {% if latest_news %}
+            <div class="custom-alert alert alert-info" role="alert">
+                <h4>Daily news!</h4>
+                {{ latest_news.title }}
+                {{ latest_news.content }}
+            </div>
+        {% endif %}
+    </div>
+
+    {% include "main/book_catalog.html" %}
+    {% include "main/footer.html" %} 
+{% endblock %}

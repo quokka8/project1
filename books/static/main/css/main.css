@@ -1,0 +1,196 @@
+
+body {
+    background-color: #F3EEEA;
+    color: #000000;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+}
+h2 {
+    color: #f7f7f7; /* Adjust the color as needed */
+    font-size: 2.5em; /* Adjust the font size as needed */
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Convert text to uppercase */
+    letter-spacing: 2px; /* Adjust letter spacing as needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow */
+}
+.list {
+    color: #85586F; /* Adjust the color as needed */
+    font-size: 2.5em; /* Adjust the font size as needed */
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Convert text to uppercase */
+    letter-spacing: 2px; /* Adjust letter spacing as needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow */
+}
+
+h3{
+    font-size: 2.5em;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+    font-weight:bold;
+    color: #85586F;
+}
+.darkheader{
+    font-size: 2.5em;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+    font-weight:bold;
+    color: #ffffff;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar{
+    background-color: #85586F;
+    
+    color: #FFFFFF;
+    font-family: 'Helvetica', sans-serif; /* Change the font family as needed */
+}
+.navbar-text{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.navbar-brand {
+    font-size: 28px; /* Adjust the font size as needed */
+    font-weight:500; /* You can adjust the font weight for a bolder look */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+  }
+
+.navbar-toggler-icon {
+    background-color: #FFFFFF; /* Set the color for the navbar toggler icon */
+}
+.icon {
+    font-size: 28px; /* Adjust the icon size */
+    margin-right: 8px; /* Adjust the spacing between the icon and text */
+    /* Add any other styling properties for the icon */
+    letter-spacing: 1px;
+  }
+.news {
+    background-color: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px; /* Add rounded corners */
+    /* padding: 15px; Add more padding for a softer look */
+    /* margin-bottom: 20px; Increase margin for spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    padding: 0%;
+    padding-bottom: 0%;
+    margin-top: 50px;
+}
+.custom-alert {
+        margin-bottom: 0px;
+}
+.container-catalog {
+    border: 1px solid #e8e2e5;
+    border-radius: 10px;
+    max-width: 80%;
+    background-color: #85586F;
+    margin-top: 30px;
+}
+.book-catalog {
+    background-color: #85586F;
+    border: 1px solid #85586F;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    color: #FFFFFF;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.card {
+    min-height: 300px; /* Adjust the height as needed */
+    color: white; /* Text color */
+    background-size: cover; /* Ensure the image covers the entire card */
+    background-position: center; /* Center the image within the card */
+    border: 1px solid #adadad;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+    position: relative;
+    margin-top: 20px;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for transparency */
+    border-radius: 8px;
+}
+.card-title {
+    color: rgb(222, 222, 222);
+    font-weight: bold; /* Adjust the font weight as needed */
+    font-size: 1.8em; /* Adjust the font size as needed */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3); /* Use a light-colored text shadow */
+}
+.image-container {
+    width: 500px; /* Set your desired width */
+    height: 600px; /* Set your desired height */
+    overflow: hidden;
+    border-radius: 8px;
+
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/* Adjust the border-radius value as needed */
+    border-radius: 10px; 
+    margin-top: 100px;
+}
+.collec {
+    color: rgb(0, 0, 0);
+    font-weight: bold; /* Adjust the font weight as needed */
+    font-size: 1.8em; /* Adjust the font size as needed */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3); /* Use a light-colored text shadow */
+}
+.card-body {
+    position: relative;
+    z-index: 1;
+}
+
+/* .card {
+    min-height: 300px; /* Adjust the height as needed */
+    /* color: black; */
+    /* background-color: #ffffff;}   */
+.collection-card {
+    cursor: pointer;
+    color:#000000
+}
+/* Your custom styles */
+.custom-form-group {
+    margin-left: 90px; /* Adjust the margin as needed */
+    margin-top: 40px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+ul{
+    margin: 10px
+}
+
+  /* Add more custom styling as needed */
+
+
+  .chapter-heading {
+    color: #333;
+}

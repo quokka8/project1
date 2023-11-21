@@ -1,0 +1,33 @@
+<div class="container" id="reading-list-partial-container">
+    <h2 class="list">Reading with group</h2>
+            <div class="book-catalog">
+                <div class="row">
+                    {% for book in group_readings %}
+                        <div class="col-md-12 mb-4">
+                            <div class="card"id="book-card-{{ book.id }}">
+                                <div class="card-body">
+                                    <h5 class="card-title collec">{{ book.title }}</h5>
+                                    <p class="card-text text-dark">Author: {{ book.author }}</p>
+                                    <p class="card-text text-dark">Genre: {{ book.genre }}</p>
+                                    <p class="card-text text-dark">Description: {{ book.description }}</p>
+                                    <!-- Display chapters if available -->
+                                    {% if book.chapter_set.all %}
+                                    <h6 class="chapter-heading">Chapters:</h6>
+                                    <ul>
+                                        {% for chapter in book.chapter_set.all %}
+                                            <li>
+                                                <a href="{% url 'allbooks:chapter_detail' chapter.id %}" style="color: #333; text-decoration: underline;">
+                                                    {{ chapter.title }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                    <!-- Button to remove from Reading List -->
+                                    <button class="btn btn-primary" onclick="readWithGroup('{{ book.title }}', {{ book.id }})">Read this book with group</button>  
+                                    <button class="btn btn-info" onclick="removeFromGroupReadings({{ book.id }})">Remove from group readings</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        {% endfor %}

@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to ReaderMe</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}">
+    <!-- Custom CSS -->
+   
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+        <div class="navbar-brand">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-book-reader icon">      ReaderMe</i> 
+            </a>
+            <div class="navbar-text">
+                Read, Chat, Be Alright: Unveiling the ReaderMe Experience
+            </div>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'signup' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'login' %}">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% if user_logged_out %}
+    <div class="container mt-3">
+        <div class="alert alert-info" role="alert">
+            You were successfully logged out!
+        </div>
+    </div>
+    {% endif %}
+    <div class="container mt-4">
+        <div class="alert alert-success" role="alert">
+            <strong>Welcome to ReaderMe!</strong> Step into a world where you can explore and enjoy books of every genre. We update our collection daily, ensuring there's always something new to discover. Whether you prefer solo reading or engaging with fellow book enthusiasts, ReaderMe offers a delightful reading experience tailored just for you. Happy reading!
+    </div>
+
+
+
+
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+   
+

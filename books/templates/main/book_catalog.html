@@ -1,0 +1,30 @@
+<div class="container-catalog mx-auto">
+    <div class="book-catalog">
+        <h2>Catalog of Books</h2>
+        <div class="row">
+            {% for collection in collections %}
+                {% comment %} <div class="col-md-4 mb-4">
+                   <div class="card collection-card" onclick="window.location.href='{% url 'allbooks:collection_detail' collection.id %}'"> 
+                          <div class="card-body">
+                            <h5 class="card-title">{{ collection.name }}</h5>
+                            <!-- Add more details or styling as needed -->
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+                <div class="col-md-4 mb-4">
+                    <div class="card collection-card" style="background-image: url('{{ collection.image.url }}');" onclick="window.location.href='{% url 'allbooks:collection_detail' collection.id %}'">
+                        <div class="card-overlay"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ collection.name }}</h5>
+                            <!-- Add more details or styling as needed -->
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+

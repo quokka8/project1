@@ -1,0 +1,153 @@
+/* Add this to your main.css file or create a new one */
+.navbar{
+    background-color: #85586F;
+    
+    color: #FFFFFF;
+    font-family: 'Helvetica', sans-serif; /* Change the font family as needed */
+}
+
+.navbar-toggler-icon {
+    background-color: #FFFFFF; /* Set the color for the navbar toggler icon */
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #F3EEEA;
+    color: #000000;
+    margin: 0; /* Remove default body margin */
+}
+
+/* Style for the main content area */
+body > div {
+    background-color: #85586F; /* Main content background color */
+    margin: 20px; /* Adjust margin as needed */
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 15px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    max-width: 800px; /* Limit the width of the main content area */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#roomtitle {
+    font-size: 40px;
+    font-weight: 500;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #85586F;
+    text-align: center; /* Center the text */
+    margin: 0; /* Remove any default margin */
+    padding: 20px; /* Add padding for spacing */
+    background-color: #F3EEEA; /* Add background color */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 0, 0, 0.2); /* Add a black shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add text shadow */
+}
+
+h2{
+    font-size: 35px;
+    font-weight: 200;
+    color: #85586F;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* Style for the room details */
+div > div {
+    background-color: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px; /* Add rounded corners */
+    padding: 15px; /* Add more padding for a softer look */
+    margin-bottom: 20px; /* Increase margin for spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.update{
+    /* margin-left: 20px; */
+    /* margin-right: 20px; */
+    margin: 7px;
+}
+
+/* Style for links */
+#room {
+    color: #85586F;
+    text-decoration: none; /* Remove underlines from links */
+    border-radius: 4px; /* Add rounded corners */
+    padding: 8px 12px;
+    background-color: #F3EEEA;
+    border: 1px solid #000000;
+    transition: background-color 0.3s; /* Add smooth transition */
+    margin-left: 25%;
+}
+
+#room:hover {
+    background-color: #85586F;
+    color: #FFFFFF;
+}
+
+/* Style for the chat log */
+#chat-log {
+    border: 1px solid #CCCCCC;
+    border-radius: 10px; /* Add rounded corners */
+    padding: 15px; /* Add more padding for a softer look */
+    margin-bottom: 20px; /* Increase margin for spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Style for chat messages */
+#chat-log p {
+    margin: 10px 0; /* Increase margin for spacing between messages */
+    word-wrap: break-word; /* Allow long words to wrap */
+    max-width: 100%; /* Set a maximum width for the messages */
+}
+/* Style for the message input form */
+/* Add this to your main.css file or create a new one */
+
+#message-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Increase margin for spacing */
+}
+
+#chat-message-input {
+    width: 100%; /* Take up the full available width */
+    max-width: 400px; /* Set the maximum width for the input field */
+    padding: 12px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    margin-top: 10px; /* Add margin to separate from the button */
+}
+
+.user-message {
+    align-self: flex-end; /* Align user messages to the right */
+    background-color: rgb(248, 243, 243); /* Background color for user messages */
+    color: #000000; /* Text color for user messages */
+    border-radius: 10px; /* Add rounded corners */
+    padding: 10px; /* Add padding for spacing */
+}
+
+.other-message {
+    align-self: flex-start; /* Align other users' messages to the left */
+    background-color: #FFFFFF; /* Background color for other users' messages */
+    color: #000000; /* Text color for other users' messages */
+    border-radius: 10px; /* Add rounded corners */
+    padding: 10px; /* Add padding for spacing */
+}
+
+#message-form button {
+    width: 100%; /* Take up the full available width */
+    max-width: 400px; /* Set the maximum width for the button */
+    padding: 12px;
+    background-color: #85586F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add smooth transition */
+    margin-top: 10px; /* Add margin to separate from the input field */
+}
+
+
+#message-form button:hover {
+    background-color: #000000;
+}

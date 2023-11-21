@@ -1,0 +1,36 @@
+<!-- books_in_collection.html -->
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}
+    Books in {{ collection.name }}
+{% endblock %}
+
+{% block content %}
+{% include "main/navbar.html" %}
+    <div class="container">
+        <div class="book-catalog">
+            <h2>Books in {{ collection.name }}</h2>
+            <div class="row">
+                {% for book in books %}
+                    <div class="col-md-12 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title collec">{{ book.title }}</h5>
+                                <p class="card-text text-dark">Author: {{ book.author }}</p>
+                                <p class="card-text text-dark">Genre: {{ book.genre }}</p>
+                                <p class="card-text text-dark">Description: {{ book.description }}</p>
+                                <a href="{% url 'allbooks:book_detail' book.id %}" class="btn btn-info">Read More</a>
+                                <a href="{% url 'allbooks:books_in_collection' collection.id %}" class="btn btn-success add-to-reading-list-button" data-book-id="{{ book.id }}">Add to Reading List</a>
+                                <button class="btn btn-primary" onclick="readWithGroup('{{ book.title }}', {{ book.id }})">Read this book with group</button>  
+                                <a href="{% url 'allbooks:books_in_collection' collection.id %}" class="btn btn-success add-to-group-reading-button" data-book-id="{{ book.id }}">Add to Group reading List</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'main/js/main.js' %}"></script>
+{% endblock %}
+
+

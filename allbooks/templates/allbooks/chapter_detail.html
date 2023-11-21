@@ -1,0 +1,25 @@
+<!-- chapter_detail.html -->
+{% extends 'main/layout.html' %}
+{% block title %}
+    {{ chapter.title }}
+{% endblock %}
+
+{% block content %}
+{% include "main/navbar.html" %}
+    <div class="container">
+        <div class="book-catalog">
+            <h2>{{ chapter.title }}</h2>
+            <p>Book: {{ chapter.book.title }}</p>
+            <p>Author: {{ chapter.book.author }}</p>
+            <p>Genre: {{ chapter.book.genre }}</p>
+            <h3 class="darkheader">Text Content:</h3>
+            <ul>
+                {% for text in chapter.text.all %}
+                    {{ text.content }}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+

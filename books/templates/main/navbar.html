@@ -1,0 +1,33 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+        
+    <a class="navbar-brand" href="#">  
+      <i class="fas fa-book-reader icon">      ReaderMe</i> 
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'allbooks:fag' %}">FAQ</a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Activities
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'allbooks:reading_list' %}">I'm reading</a>
+            <a class="dropdown-item" href="{% url 'allbooks:group_readings' %}">My group readings</a>
+          </div>
+        </li>
+          <li class="nav-item active">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+      </ul>
+    </div>
+  </nav>

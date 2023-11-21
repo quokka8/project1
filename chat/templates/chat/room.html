@@ -1,0 +1,144 @@
+<!-- chat/templates/chat/room.html1 -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{{ room_name }} Room</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'chat/css/main.css' %}">  
+</head>
+{% include "main/navbar.html" %}
+<body>
+    <h2 id="roomtitle">{{ room_name }} - Group reading room</h2>
+    <div>
+        <div>
+            <p>Host: {{ room.host.username }}</p>
+            <p>Current Goal: {{ room.current_goal }}</p>
+            <p>Next Discussion: {{ room.next_discussion }}</p>
+        </div>
+    </div>
+    {% if user.is_authenticated and user == room.host %}
+    <a id="room" href="{% url 'update_room' room_name=room.book_title %}">Update Room</a>
+    {% endif %} 
+        <div id="chat-log" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+            {% for message in room_messages %}
+                <p class="{% if message.user.username == user.username %}user-message{% else %}other-message{% endif %}">
+                    {{ message.user.username }}: {{ message.content }}
+                </p>
+            {% endfor %}
+        </div>
+        
+    </div>
+    
+
+    {% comment %} <div id="chat-log" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+        {% for message in room_messages %}
+            <p>{{ message.user.username }}: {{ message.content }}</p>
+        {% endfor %}
+    </div>   {% endcomment %}
+
+    
+    <form method="post" id="message-form">
+        {% csrf_token %}
+        <input type="text" name="content" id="chat-message-input" size="100" placeholder="Type your message..."><br>
+        <button type="submit">Send</button>
+    </form> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    {{ room_name|json_script:"room-name" }}
+
+    <script>
+        const roomName = JSON.parse(document.getElementById('room-name').textContent);
+        const chatSocket = new WebSocket(
+            'ws://' + window.location.host + '/ws/chat/' + roomName + '/'
+        );
+    
+       function updateChat(data) {
+            // Update the chat log
+            const messageLog = document.querySelector('#chat-log');
+            
+            // Assuming data.message contains both username and content
+            messageLog.innerHTML += `<p class="${data.user === '{{ user.username }}' ? 'user-message' : 'other-message'}">${data.message}</p>`;
+            messageLog.scrollTop = messageLog.scrollHeight;  // Auto-scroll to the bottom
+        }  
+    
+        chatSocket.onopen = function() {
+            console.log('Chat socket opened');
+        };
+    
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            updateChat(data);
+        };
+    
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+    
+        document.querySelector('#chat-message-input').focus();
+    
+        document.querySelector('#message-form').onsubmit = function(e) {
+            e.preventDefault();
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const message = messageInputDom.value;
+    
+            // Assuming you send both the message content and the username in data.message
+            chatSocket.send(JSON.stringify({
+                'message': message,
+                'user': '{{ user.username }}'
+            }));
+            messageInputDom.value = '';
+        };
+    </script> 
+  
+
+    {% comment %} <script>
+        const roomName = JSON.parse(document.getElementById('room-name').textContent);
+        const chatSocket = new WebSocket(
+            'ws://' + window.location.host + '/ws/chat/' + roomName + '/'
+        );
+        
+        function updateChat(data) {
+            // Update the chat log
+            const messageLog = document.querySelector('#chat-log');
+            messageLog.innerHTML += `<p> ${data.message}</p>`;
+            messageLog.scrollTop = messageLog.scrollHeight;  // Auto-scroll to the bottom
+        }  
+        
+        chatSocket.onopen = function() {
+            console.log('Chat socket opened');
+        };
+        
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            updateChat(data);
+        };
+        
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+        
+        document.querySelector('#chat-message-input').focus();
+        
+             
+        document.querySelector('#message-form').onsubmit = function(e) {
+            e.preventDefault();
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const message = messageInputDom.value;
+            chatSocket.send(JSON.stringify({
+                'message': message
+            }));
+            messageInputDom.value = '';
+        };
+
+    </script> {% endcomment %}
+            
+   </body>
+    </html>   
+
+
+

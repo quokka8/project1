@@ -1,0 +1,42 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h3>Sign Up</h3>
+        <div class=" custom-form-group">
+        <form method="post" action="{% url 'signup' %}">
+          {% csrf_token %}
+          <div class="form-group row">
+            <label for="{{ form.username.id_for_label }}" class="col-sm-4 col-form-label">Username:</label>
+            <div class="col-sm-8">
+              {{ form.username }}
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="{{ form.email.id_for_label }}" class="col-sm-4 col-form-label">Email:</label>
+            <div class="col-sm-8">
+              {{ form.email }}
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="{{ form.password1.id_for_label }}" class="col-sm-4 col-form-label">Password:</label>
+            <div class="col-sm-8">
+              {{ form.password1 }}
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="{{ form.password2.id_for_label }}" class="col-sm-4 col-form-label">Confirm Password:</label>
+            <div class="col-sm-8">
+              {{ form.password2 }}
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
